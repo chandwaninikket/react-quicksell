@@ -11,14 +11,12 @@ export default function Counter() {
 const changeInitValue =(e) =>{
     const val = parseInt(e.target.value) || 0
     if (val>maxValue){
-        setInitValue(1);
-        setCount(1)
         return false;
-        
     }
-    else
+    else {
         setInitValue(val);
         setCount(val);
+    }
 }
 
 const changeMaxValue =(e) =>{
@@ -27,17 +25,22 @@ const changeMaxValue =(e) =>{
         setMaxValue(initValue)
         return false
     }
-    else
+    else{
         setMaxValue(val);
-    if (count>maxValue)
-        setCount(maxValue)
+    }
+    if (count>maxValue) {
+        setCount(maxValue);
+    }
 
 }
 const decrement= () => {
-    if (count<1)
+    if (count<1){
         return false;
+    }
     else 
-        setCount(count-1);
+        {
+            setCount(count-1);
+        }
 }
 
 const increment= () => {
@@ -48,7 +51,7 @@ const increment= () => {
         setCount(maxValue)
         return false;
     }
-    else   
+    else
         setCount(count+1);
 }
 
